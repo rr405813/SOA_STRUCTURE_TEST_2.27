@@ -1,3 +1,11 @@
+$(function() {
+    $('.home_nav_section').hover(function() {
+        $(this).toggleClass('expand');
+        $('.home_nav_section').not(this).toggleClass('shrink');
+    });
+});
+
+
 ( function( $ ) {
     // Init Skrollr
     var s = skrollr.init({

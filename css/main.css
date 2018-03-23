@@ -161,6 +161,17 @@ textarea {
   }
 }
 
+@keyframes navTitleAnimation {
+  0% {
+    top: 320px;
+    opacity: 0;
+  }
+  100% {
+    top: 300px;
+    opacity: 1;
+  }
+}
+
 
 h1 {
    animation: titleAnimation 1s ease-in-out 2s forwards; 
@@ -251,7 +262,68 @@ p.down_button {
     overflow-y: hidden;
 }
 
+/* ==========================================================================
+  HOME 
+========================================================================== */
+.home_nav_section {
+    width: 33%;
+    display: inline-block;
+    height: 100vh;
+    overflow:hidden;
+    position: relative;
+}
+/* gradient animation change taken from https://www.impressivewebs.com/demo-files/animated-css3-gradient-buttons/ */
+.home_nav_section::before {
+    background: -webkit-radial-gradient(#36dac9, #36dac9, #a2f6ed, #a2f6ed);
+    background: -moz-radial-gradient(#36dac9, #36dac9, #a2f6ed, #a2f6ed);
+    background: -o-radial-gradient(#36dac9, #36dac9, #a2f6ed, #a2f6ed);
+    background: -ms-radial-gradient(#36dac9, #36dac9, #a2f6ed, #a2f6ed);
+    background: radial-gradient(#9d9e9e1a, #9d9e9e1a, #10101061, #10101061);
+    background-position: center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -o-transition: all .4s linear;
+    -ms-transition: all .4s linear;
+    transition: all .4s linear;
+    width: 100%;
+    content: '';
+    position: absolute;
+    height: 100vh;
+}
 
+.home_nav_section:hover::before {
+    -webkit-background-size: 100% 200%;
+    -moz-background-size: 100% 200%;
+    background-size: 200% 200%;
+}
+
+.expand{
+    width: 45%;
+    -webkit-transition: all 1s linear;
+       -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+            transition: all 0.75s linear;
+}
+.shrink{
+    width: 27%;
+     -webkit-transition: all 1s linear;
+       -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+            transition: all 0.75s linear;
+}
+
+.nav_title_section {
+    animation: navTitleAnimation 1s ease-in-out 3.5s forwards; 
+    -webkit-animation: scrollAnimation 1s ease-in-out 3.5s forwards;
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+}
 
 
 /* ==========================================================================
@@ -271,6 +343,8 @@ p.down_button {
     padding-left: 25px;
     color: #fff;
 }
+
+
 
 
 .menu_container {
